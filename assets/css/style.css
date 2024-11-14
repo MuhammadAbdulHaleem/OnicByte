@@ -91,8 +91,9 @@ nav .nav-link{
         padding-left: 240px;
     }
 
-    .sidebar-active {
+    .sidebar-active li.active {
         background-color: var(--base-color);
+
     }
 }
 

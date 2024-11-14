@@ -1,19 +1,32 @@
+<?php
+// Get the current page name (e.g., index.php, about.php, etc.)
+$current_page = basename($_SERVER['PHP_SELF']); 
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - OnicByte</title>
+    <title><?php echo isset($page_title) ? $page_title : 'OnicByte';?></title>
 
     <!-- css links -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- css links end -->
+
+    <!-- Chart.js links -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <!-- Chart.js links End -->
 
 </head>
 
-<body>
+<body class="dashboard-body">
 
     <!-- header -->
     <nav class="navbar d-none d-md-block fixed-top navbar-dark z-1">
@@ -68,54 +81,43 @@
             </button>
             <div class="collapse navbar-collapse d-md-flex flex-md-column h-100 justify-content-between mt-3 mt-md-0"
                 id="navbarNav">
-                <ul class="navbar-nav d-flex align-items-start  flex-column w-100">
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="index.html"><img class="pe-2 d-none d-md-inline" src="images/icons/overview tab.svg" alt="img">Overview</a>
+                <ul class="navbar-nav sidebar-active d-flex flex-column w-100 align-items-start">
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="index.php"><img class="pe-2 d-none d-md-inline"
+                                src="images/icons/overview tab.svg" alt="img">Overview</a>
                     </li>
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="teachers.html"><img class="pe-2 d-none d-md-inline" src="images/icons/teacher tab.svg" alt="img">Teachers</a>
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'teachers.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="teachers.php"><img class="pe-2 d-none d-md-inline"
+                                src="images/icons/teacher tab.svg" alt="img">Teachers</a>
                     </li>
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="students.html"><img class="pe-2 d-none d-md-inline" src="images/icons/student tab.svg" alt="img">Students</a>
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'students.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="students.php"><img class="pe-2 d-none d-md-inline"
+                                src="images/icons/student tab.svg" alt="img">Students</a>
                     </li>
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="employee.html"><img class="pe-2 d-none d-md-inline" src="images/icons/employ tab.svg" alt="img">Employee</a>
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'employee.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="employee.php"><img class="pe-2 d-none d-md-inline"
+                                src="images/icons/employ tab.svg" alt="img">Employee</a>
                     </li>
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="interns.html"><img class="pe-2 d-none d-md-inline"
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'interns.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="interns.php"><img class="pe-2 d-none d-md-inline"
                                 src="images/icons/employ tab.svg" alt="img">Interns</a>
                     </li>
-                    <li class="nav-item w-100 ps-5 sidebar-active">
-                        <a class="nav-link" href="projects.html"><img class="pe-2 d-none d-md-inline"
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'projects.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="projects.php"><img class="pe-2 d-none d-md-inline"
                                 src="images/icons/employ tab.svg" alt="img">Projects</a>
                     </li>
-                    <li class="nav-item w-100 ps-5">
-                        <a class="nav-link" href="courses.html"><img class="pe-2 d-none d-md-inline"
+                    <li class="nav-item w-100 ps-5 <?php echo ($current_page == 'courses.php') ? 'active' : ''; ?>">
+                        <a class="nav-link " href="courses.php"><img class="pe-2 d-none d-md-inline"
                                 src="images/icons/employ tab.svg" alt="img">Courses</a>
                     </li>
                 </ul>
                 <div class="support d-flex flex-column mb-5">
-                    <a class="nav-link d-none d-md-inline" href="#"><img class="pe-2" src="images/icons/help.svg" alt="img">Help</a>
-                    <a class="nav-link d-none d-md-inline" href="#"><img class="pe-2" src="images/icons/support.svg" alt="img">Support</a>
+                    <a class="nav-link d-none d-md-inline" href="#"><img class="pe-2" src="images/icons/help.svg"
+                            alt="img">Help</a>
+                    <a class="nav-link d-none d-md-inline" href="#"><img class="pe-2" src="images/icons/support.svg"
+                            alt="img">Support</a>
                 </div>
             </div>
         </div>
     </nav>
     <!-- Sidebar End -->
-
-    <!-- Main Content -->
-    <main>
-        <div class="container pb-5">
-            <h3 class="text-brand mt-3 ms-2">Projects List</h3>
-
-        </div>
-    </main>
-    <!-- Main Content End -->
-
-
-    <!-- js links -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- js links end -->
-</body>
-
-</html>
