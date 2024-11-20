@@ -20,8 +20,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <!-- css links end -->
 
     <!-- Chart.js links -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="./assets/js/chart.js"></script>
+    <script src="./assets/js/chartjs-plugin-datalabels.js"></script>
     <!-- Chart.js links End -->
 
 </head>

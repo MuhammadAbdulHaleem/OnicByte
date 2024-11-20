@@ -129,7 +129,7 @@ include_once 'includes/header.php';
                     </form>
                 </div>
                 <div class="col-lg-2 col-md-3 col-4">
-                    <button class="btn btn-primary px-md-4 ms-md-5">Add +</button>
+                    <a class="btn btn-primary px-md-4 ms-md-5" href="registration_form.php">Add +</a>
                 </div>
             </div>
             <!-- actions End -->

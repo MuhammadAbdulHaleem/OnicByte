@@ -22,6 +22,11 @@ body{
 nav .nav-link{
     color: var(--text-white);
     font-size: 18px;
+    font-weight: 700;
+}
+
+span{
+    color: var(--base-color2);
 }
 
 .text-brand{
@@ -54,7 +59,7 @@ nav .nav-link{
 
 /* =========== Registration form =========== */
 
-.form-box {
+/* .form-box {
     width: 600px;
 }
 
@@ -62,14 +67,48 @@ nav .nav-link{
     width: 100%;
     color: var(--text-white);
     background-color: var(--base-color);
+} */
+
+.form-action-buttons a{
+   font-weight: 600;
+   padding: 8px 25px;
+   border-radius: 8px;
 }
+
+.registration-form-navbar-brand{
+    width: 10%;
+}
+
+.form-action-buttons .login{
+   color: var(--text-white);
+   background-color: var(--base-color);
+}
+
+.form-action-buttons .social-links a{
+    padding: 5px;
+}
+.form-action-buttons .social-links a i{
+    font-size: 24px;
+    color: var(--text-white);
+}
+
+
+#registration-form-main-heading{
+    background-color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+
 
 /* =========== Registration form End =========== */
 
 /*  Navbar */
 .navbar{
-    background-color: var(--base-color);
+    background-color: rgba(0, 0, 0, 0.2);
 }
+
 /* Navbar End  */
 
 
@@ -95,6 +134,27 @@ nav .nav-link{
         background-color: var(--base-color);
 
     }
+
+    #revenueChartContainer,
+    #growthChartContainer {
+        width: 100%;
+    }
+
+    .form-action-links ul{
+       margin: auto;
+       /* margin-left: 40%; */
+    }
+
+    .form-action-links{
+       /* margin: auto; */
+       margin-left: 5%;
+    }
+
+    #personal_info_form{
+        margin-left: 8%;
+        font-weight: 700;
+    }
+
 }
 
 
@@ -157,3 +217,11 @@ canvas {
 
 
 /* ============== Dashboard End ============== */
+
+@media (max-width: 768px) {
+
+    #revenueChartContainer,
+    #growthChartContainer {
+        width: 60%;
+    }
+}

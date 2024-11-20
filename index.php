@@ -108,7 +108,9 @@ include_once 'includes/header.php';
                     <div class="col-md-3 col-12">
                         <div class="rounded dashboard-chart-card p-3">
                             <p>Growth</p>
-                            <canvas  id="growthChart"></canvas>
+                            <div class="chart-container" id="growthChartContainer">
+                                <canvas  id="growthChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
